@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tect1practise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string player = Console.ReadLine();
+            int currHealth = int.Parse(Console.ReadLine());
+            int maxHealth = int.Parse(Console.ReadLine());
+            int currEnergy = int.Parse(Console.ReadLine());
+            int maxEnergy = int.Parse(Console.ReadLine());
+            int diffHealth = maxHealth - currHealth;
+            int diffEnergy = maxEnergy - currEnergy;
+            string health = new string('|', currHealth);
+            string leftHealth = "", leftEnergy = "";
+            Console.WriteLine("Name: {0}", player);
+            if (diffHealth != 0)
+            {
+                leftHealth = new string('.', maxHealth - currHealth);
+                Console.WriteLine("Health: |{0}{1}|", health, leftHealth);
+            }
+            else
+            {
+                Console.WriteLine("Health: |{0}|", health);
+            }
+            string energy = new string('|', currEnergy);
+            if (diffEnergy != 0)
+            {
+                leftEnergy = new string('.', maxEnergy - currEnergy);
+                Console.WriteLine("Energy: |{0}{1}|", energy, leftEnergy);
+            }
+            else
+            {
+                Console.WriteLine("Energy: |{0}|", energy);
+            }
+            
+        }
+    }
+}
